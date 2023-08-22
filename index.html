@@ -10,31 +10,130 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- FONTAWSOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h2>Chương trình kiểm tra kết quả tuyển sinh</h2>
-  <label for="diemChuan">Điểm chuẩn:</label>
-  <input type="number" id="diemChuan"><br><br>
+  <div class="container">
+    <!-- Chương trình kiểm tra kết quả tuyển sinh -->
+    <div class="hw-header">
+      <h2>Chương trình kiểm tra kết quả tuyển sinh</h2>
+    </div>
+    
+    <label for="diemChuan">Điểm chuẩn:</label><br>
+    <input type="number" id="diemChuan" class="form-control form__input" placeholder="1"><br><br>
 
-  <label for="diemMon1">Điểm môn 1:</label>
-  <input type="number" id="diemMon1"><br><br>
+    <label for="diemMon1">Điểm môn 1:</label><br>
+    <input type="number" id="diemMon1" class="form-control form__input" placeholder="1"><br><br>
 
-  <label for="diemMon2">Điểm môn 2:</label>
-  <input type="number" id="diemMon2"><br><br>
+    <label for="diemMon2">Điểm môn 2:</label><br>
+    <input type="number" id="diemMon2" class="form-control form__input" placeholder="1"><br><br>
 
-  <label for="diemMon3">Điểm môn 3:</label>
-  <input type="number" id="diemMon3"><br><br>
+    <label for="diemMon3">Điểm môn 3:</label><br>
+    <input type="number" id="diemMon3" class="form-control form__input" placeholder="1"><br><br>
 
-  <label for="khuVuc">Khu vực (A, B, C):</label>
-  <input type="text" id="khuVuc"><br><br>
+    <label for="khuVuc">Khu vực:</label><br>
+    <select id="khuVuc" class="form-control form__input">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+    </select><br><br>
 
-  <label for="doiTuong">Đối tượng (1, 2, 3):</label>
-  <input type="number" id="doiTuong"><br><br>
+    <label for="doiTuong">Đối tượng:</label><br>
+    <select id="doiTuong" class="form-control form__input">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="0">0</option>
+    </select><br><br>
 
-  <button onclick="kiemTraTuyenSinh()">Kiểm tra</button><br><br>
+    <button type = "button" class = "btn btn-primary" onclick="kiemTraTuyenSinh()">Kiểm tra</button><br><br>
 
-  <p id="ketQua"></p>
+    <p id="ketQuaTuyenSinh"></p>
+
+    <br>
+
+    <!-- Chương trình tính tiền điện -->
+    <div class="hw-header">
+      <h2>Chương trình tính tiền điện</h2>
+    </div>
+    <label for="tenKhachHang">Tên khách hàng:</label><br>
+    <input type="text" id="tenKhachHang" class="form-control form__input"><br><br>
+    <label for="soKW">Số KW tiêu thụ:</label><br>
+    <input type="number" id="soKW" class="form-control form__input" placeholder="1"><br><br>
+    <button type = "button" class = "btn btn-primary" onclick="tinhTienDien()">Tính tiền</button><br><br>
+    <p id="ketQuaTienDien"></p>
+
+    <br>
+
+    <!-- Chương trình tính thuế thu nhập cá nhân -->
+    <div class="hw-header">
+      <h2>Chương trình tính thuế thu nhập cá nhân</h2>
+    </div>
+    <label for="hoTen">Họ tên:</label><br>
+    <input type="text" id="hoTen" class="form-control form__input"><br><br>
+    <label for="tongThuNhap">Tổng thu nhập năm (triệu VND):</label><br>
+    <input type="number" id="tongThuNhap" class="form-control form__input" placeholder="1"><br><br>
+    <label for="soNguoiPhuThuoc">Số người phụ thuộc:</label><br>
+    <input type="number" id="soNguoiPhuThuoc" class="form-control form__input" placeholder="1"><br><br>
+    <button type = "button" class = "btn btn-primary" onclick="tinhThue()">Tính thuế</button><br><br>
+
+    <p id="ketQuaThue"></p>
+
+    <br>
+
+    <!-- Tính tiền cáp -->
+    <div class="hw-header">
+      <h1>Chương trình tính tiền cáp</h1>
+    </div>
+    <label for="customerType">Loại khách hàng:</label><br>
+    <select id="customerType" class="form-control form__input" onchange="toggleFields()">
+      <option value="residential">Nhà dân</option>
+      <option value="business">Doanh nghiệp</option>
+    </select>
+  
+    <br><br>
+  
+    <label for="customerID">Customer ID:</label><br>
+    <input type="text" id="customerID" class="form-control form__input">
+  
+    <br><br>
+  
+    <div id="connectionsField">
+      <label for="connections">Số kết nối:</label><br>
+      <input type="number" id="connections" class="form-control form__input" placeholder="1">
+    </div>
+  
+    <br><br>
+  
+    <div id="premiumChannelsField">
+      <label for="premiumChannels">Số kênh cao cấp:</label><br>
+      <input type="number" id="premiumChannels" class="form-control form__input" placeholder="1">
+    </div>
+  
+    <br>
+  
+    <button type="button" class="btn btn-primary" onclick="calculateBill()">Tổng bill</button>
+  
+    <h2>Tổng tiền:</h2>
+    <p id="billResult"></p>
+  </div>
+
+
+
+
+
+
+
+
+
 
 
   <!-- Optional JavaScript -->

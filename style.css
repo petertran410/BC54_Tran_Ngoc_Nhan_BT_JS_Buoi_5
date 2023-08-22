@@ -1,0 +1,50 @@
+.container .hw-header {
+  display: flex;
+  align-items: center;
+}
+
+.container i {
+  font-size: 22px;
+  padding-bottom: 5px;
+  margin-right: 10px;
+  color: green;
+}
+
+.container .form__input {
+  letter-spacing: .15px;
+  border: none;
+  outline: 0;
+  padding: .5rem 1rem;
+  background-color: #ecf0f3;
+  transition: .25s ease;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+  width: 30%;
+}
+
+.container .btn-primary {
+  border-radius: 25px;
+  letter-spacing: 1px;
+  background-color: #4b70e2;
+  color: #f9f9f9;
+  box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #f9f9f9;
+  border: none;
+  outline: 0;
+  padding: 10px 40px;
+}
+
+.container .alert {
+  position: relative;
+  padding: 20px 20px;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  width: 30%;
+}
+
+.container .alert-success {
+  margin-top: 20px;
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
